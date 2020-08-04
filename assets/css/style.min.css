@@ -1,0 +1,319 @@
+
+:root {
+
+    --default-padding: 25px;
+
+    --header-1-height: 60px;
+    --header-2-height: 75px;
+
+    --chatlog-height: 101px;
+
+
+    --primary-bg: #000000;
+    --primary-sep-bg: #CECECE;
+    --primary-clr: #393939;
+
+    --accent-bg: #1bc712;
+    --accent-sep-bg: #1bc712;
+    --accent-clr: #000000;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: calc(100% - 79px);
+}
+
+body {
+    background-color: var(--primary-bg);
+    font-family: 'Source Sans Pro';
+    font-weight: normal;
+    min-height: calc(100% - 79px);
+    position: relative;
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 120px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+#log-header {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: var(--header-2-height);
+    top: var(--header-1-height);
+
+    background-color: var(--primary-bg);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .1);
+}
+
+#log-header .grid {
+    display: grid;
+    grid-template-columns: auto 15px 1fr auto;
+    grid-template-areas: "log-header__card-left . log-header__card-mid log-header__card-right";
+}
+
+#log-header .grid .card--left {
+    justify-self: left;
+    grid-area: log-header__card-left;
+
+    display: grid;
+    grid-template-columns: "45px 500px";
+    grid-template-areas: "wrapper-left wrapper-right";
+    grid-column-gap: 10px;
+    align-items: center;
+    height: var(--header-2-height);
+}
+
+#log-header .grid .card--left .wrapper-left .img {
+    grid-area: card--left_img;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+}
+
+#log-header .grid .card--left .wrapper-right .reported-player {
+    grid-area: reported-player;
+
+    margin-bottom: -5px;
+}
+
+#log-header .grid .card--left .wrapper-right .reported-player__name {
+    grid-area: reported-player__name;
+    font-size: 20px;
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+}
+
+#log-header .grid .card--mid {
+    justify-self: left;
+    grid-area: log-header__card-mid;
+    align-items: center;
+    width: 20px;
+    height: var(--header-2-height);
+    color: black;
+    fill: black;
+    display: grid;
+    margin-top: 9px;
+}
+
+#log-header .grid .card--mid .icon-container {
+    width: 21px;
+    height: 20px;
+    position: relative;
+    z-index: 15;
+    cursor: pointer;
+    fill: var(--primary-bg);
+    color: var(--primary-bg);
+    border-radius: 5px;
+    background-color: #333;
+    transition: all .25s;
+}
+
+#log-header .grid .card--mid .icon-container.active {
+    fill: #333;
+    color: #333;
+    background-color: var(--primary-bg);
+}
+
+@keyframes bounce-icon-infinite {
+    0% {
+        margin-top: -5px;
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        margin-top: -5px;
+        transform: rotate(20deg);
+    }
+}
+
+#log-header .grid .card--mid .icon-container .icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin-left: 2px;
+    margin-top: 2px;
+    z-index: 10;
+}
+
+#log-header .grid .card--right {
+    justify-self: right;
+    grid-area: log-header__card-right;
+
+    display: grid;
+    grid-template-areas: "wrapper-left wrapper-right";
+    grid-column-gap: 35px;
+    height: var(--header-2-height);
+    align-items: center;
+}
+
+#log-header .grid .card--right .wrapper-right .creation-server__value {
+    cursor: pointer;
+}
+
+#log-header .grid .card--right .wrapper-right .creation-server__value:hover::before {
+    content: attr(data-servers);
+    background: var(--primary-bg);
+    color: var(--primary-clr);
+    position: absolute;
+}
+
+
+#chatlog {
+    margin-top: calc(var(--header-1-height) + var(--header-2-height) + var(--default-padding));
+}
+
+#chatlog .grid {
+    display: grid;
+    grid-row-gap: var(--default-padding);
+}
+
+#chatlog .grid .card {
+    height: var(--chatlog-height);
+    background-color: var(--primary-bg);
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .26);
+    padding: 0px 10px 0px 10px;
+
+    display: grid;
+    grid-template-areas: 
+                "card--top"
+                "card--middle"
+                "card--bottom";
+
+    transition: all .25s ease-in-out;
+}
+
+#chatlog .grid .card .card--top {
+    grid-area: card--top;
+    height: calc(var(--chatlog-height) / 12 + var(--chatlog-height) / 2 - 0.5px);
+    align-items: center;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "card--top-left card--top-right";
+}
+
+#chatlog .grid .card .card--top .card--top-left {
+    grid-area: card--top-left;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "wrapper-left wrapper-right";
+    grid-column-gap: 5px;
+    justify-items: left;
+}
+
+#chatlog .grid .card .card--top .card--top-left .wrapper-left {
+    grid-area: wrapper-left;
+}
+
+#chatlog .grid .card .card--top .card--top-left .wrapper-left .card__img {
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    box-shadow: 1px 1px rgba(0, 0, 0, .16);
+}
+
+#chatlog .grid .card .card--top .card--top-left .wrapper-right {
+    grid-area: wrapper-right;
+    align-self: center;
+}
+
+#chatlog .grid .card .card--top .card--top-left .wrapper-right .card__username {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+#chatlog .grid .card .card--top .card--top-right {
+    grid-area: card--top-right;
+}
+
+#chatlog .grid .card .card--middle {
+    width: 100%;
+    background-color: var(--primary-sep-bg);
+    height: 1px;
+}
+
+#chatlog .grid .card .card--bottom {
+    grid-area: card--bottom;
+    height: calc(var(--chatlog-height) / 2 - var(--chatlog-height) / 12 - 0.5px);
+    align-items: center;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "card--bottom-left card--bottom-right";
+}
+
+#chatlog .grid .card .card--bottom .card--bottom-left {
+    grid-area: card--bottom-left;
+}
+
+#chatlog .grid .card .card--bottom .card--bottom-left .chat-tooltip {
+    cursor: pointer;
+}
+
+#chatlog .grid .card .card--bottom .card--bottom-left .chat-tooltip::after {
+    content: 'Es handelt sich bei dieser Nachricht um einen Befehl. Dieser wird hier nicht angezeigt!';
+    position: relative;
+    left: 0px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+
+#chatlog .grid .card .card--bottom .card--bottom-left .chat-tooltip:hover::after {
+    left: 5px;
+    opacity: 1;
+}
+
+#chatlog .grid .card .card--bottom .card--bottom-right {
+    grid-area: card--bottom-right;
+}
+
+#chatlog .grid .card .card--bottom .card--bottom-right .card__icon-wrapper {
+    cursor: pointer;
+}
+
+
+#chatlog .grid .card.highlight {
+    background-color: var(--accent-bg);
+    color: var(--accent-clr);
+    fill: var(--accent-clr);
+}
+
+#chatlog .grid .card.highlight .card--middle {
+    background-color: var(--accent-sep-bg);
+}
+
+
+#error {
+    margin-top: calc(var(--header-1-height) + var(--default-padding));
+    margin-bottom: calc(var(--default-padding) * 2);
+
+    text-align: center;
+}
+
+#error .error {
+    font-size: 35px
+}
+
+#error .description {
+    font-size: 20px;
+}

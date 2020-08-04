@@ -1,0 +1,129 @@
+/* 
+    Credits for the font imports to https://google-webfonts-helper.herokuapp.com 
+    File size reduced from 100kb to 16kb, thanks to this method.
+*/
+/* source-sans-pro-regular - latin */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+         url('../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf');
+}
+
+/* source-sans-pro-600 - latin */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'),
+         url('../fonts/Source_Sans_Pro/SourceSansPro-SemiBold.ttf');
+        
+}
+/* End of font imports */
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Start of standard theme, slightly modified. */
+/* ====== Header ======= */
+.header {
+color: #fff;
+padding-top: 5px;
+padding-bottom: 5px;
+background: rgba(40, 40, 40, 1);
+}
+.header-scrolled {
+/* -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); */
+background: rgba(40, 40, 40, 1);
+}
+.header-scrolled .nav > li > a {
+color: rgba(255, 255, 255, 0.65);
+}
+/* ====== Nav ======= */
+.navbar-toggle {
+margin-right: 0;
+margin-top: 0;
+margin-bottom: 15px;
+background: none;
+position: relative;
+top: 5px;
+}
+.navbar-toggle:focus {
+outline: none;
+}
+.navbar-toggle .toggle-title {
+display: inline-block;
+float: left;
+color: rgba(255, 255, 255, 0.9);
+margin-right: 10px;
+font-weight: bold;
+text-transform: uppercase;
+position: relative;
+top: -1px;
+}
+.navbar-toggle .icon-bar-wrapper {
+float: left;
+}
+.navbar-toggle .icon-bar {
+background-color: #C9091A;
+height: 3px;
+-webkit-opacity: 0.8;
+-moz-opacity: 0.8;
+opacity: 0.8;
+}
+.navbar-toggle:hover .icon-bar {
+-webkit-opacity: 1;
+-moz-opacity: 1;
+opacity: 1;
+}
+.navbar-nav {
+display: inline-block;
+margin-left: auto;
+margin-right: auto;
+}
+.nav > li.colored > a {
+color: #F00A1E;
+}
+.nav > li > a {
+color: #fff;
+color: rgba(255, 255, 255, 0.7);
+font-size: 14px;
+font-weight: 600;
+text-transform: uppercase;
+}
+.nav > li > a:focus,
+.nav > li > a:hover {
+background: none;
+outline: none;
+color: rgba(255, 255, 255, 0.9);
+}
+.nav > li.colored > a:hover {
+color: #fff;
+}
+.nav > li.active > a {
+color: #fff;
+}
+
+/* ======= Footer ======= */
+.footer {
+position: absolute;
+bottom: 0px;
+width: 100%;
+height: 120px;
+background: #000000;
+font-weight: normal;
+color: rgba(255, 255, 255, 0.6);
+}
+.footer a {
+color: #C9091A;
+}
+.footer a:hover {
+color: #980714;
+}
+.footer-content {
+padding: 15px;
+}

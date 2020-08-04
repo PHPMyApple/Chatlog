@@ -1,0 +1,27 @@
+{
+    "error": {
+        "missingID": "Fehlende ID",
+        "invalidID": "Ungültige ID",
+        "noEntriesAvailable": "Hierzu sind keine Einträge vorhanden.",
+        "giveChatreportIDAsParameter": "URL fehlt. Schreibe folgendes: chat.example.org/CHATREPORT-ID"
+    },
+    "title": {
+        "error": "Chatlog | example.org",
+        "success": "Chatlog {} | example.org"
+    },
+    "chat": {
+        "chatreportFrom": "Chatreport von",
+        "createdOn": "Erstellt am",
+        "server": "Server"
+    },
+    "header": {
+        "title1": "HOME",
+        "title2": "FORUM",
+        "title3": "SERVICE",
+        "title4": "ÜBER UNS",
+        "title5": "ANDERES",
+        "title6": "KONTAKT",
+        "title7": "GITHUB",
+        "title8": "DATENBANK"
+    }
+}
