@@ -9,8 +9,8 @@
     $translation = json_decode(file_get_contents($WebsiteRoot.'/assets/translations/'.$lang.'.json'), true);
     
     include $WebsiteRoot.'/assets/php/header.php';
-    require_once $WebsiteRoot.'/assets/php/utils.php';
-    require_once $WebsiteRoot.'/assets/php/fillTemplate.php';
+    require_once $WebsiteRoot.'/assets/php/datamanager.php';
+    require_once $WebsiteRoot.'/assets/php/Template.php';
 ?>
     <section id="log-header">
         <div class="container grid">
