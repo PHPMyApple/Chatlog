@@ -1,5 +1,4 @@
 </div>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-content text-center">
@@ -11,6 +10,6 @@
 
     </div>
 
-    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>
