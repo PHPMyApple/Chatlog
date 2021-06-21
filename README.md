@@ -1,4 +1,6 @@
 # Chatlog
-Just for Fun Chatlog mit URL
-Also sowas: chatlog.example.org/12345
-Habe das nicht so richtig getestet. vllt Bugs drin.
+Chatlog aus ehemaligem Projekt 
+Beispiel: chatlog.example.org/12345
+funktioniert nur mit entsprechendem Plugin, nicht allgemein nutzbar
+
+
